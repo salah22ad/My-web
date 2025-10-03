@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صفحة المطور</title>
 
-    <link rel="icon" type="image/png" href="app-icon.png">
-    <link rel="apple-touch-icon" href="app-icon.png">
-    <meta property="og:title" content="تطبيق دفتر اليوميات" />
+    <title>تطبيق دفتر اليوميات | أفضل برنامج لتتبع المصاريف وإدارة الميزانية</title>
+
+    <meta name="description" content="حمل تطبيق دفتر اليوميات مجاناً لإدارة نفقاتك اليومية وتتبع مصاريفك بسهولة. أفضل حل للتحكم في ميزانيتك الشخصية وتحقيق أهدافك المالية في اليمن والوطن العربي.">
+
+    <link rel="icon" type="image/png" href="https://salah22ad.github.io/My-web/app-icon.png">
+    <link rel="apple-touch-icon" href="https://salah22ad.github.io/My-web/app-icon.png">
+    <meta property="og:title" content="تطبيق دفتر اليوميات لتتبع المصاريف" />
     <meta property="og:description" content="رفيقك المثالي لتتبع نفقاتك اليومية وإدارة أموالك بكل سهولة ويسر." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="http://haddadinc.somee.com/app-icon.png" />
-    <meta property="og:url" content="http://haddadinc.somee.com/" />
+    <meta property="og:image" content="https://salah22ad.github.io/My-web/app-icon.png" />
+    <meta property="og:url" content="https://salah22ad.github.io/My-web/" />
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
     <style>
@@ -46,7 +48,7 @@
         }
         .header {
             height: 20vh;
-            background-image: url('banner.jpg');
+            background-image: url('https://salah22ad.github.io/My-web/banner.jpg');
             background-size: cover;
             background-position: center;
             position: relative;
@@ -127,8 +129,6 @@
             transform: translateY(-3px);
             box-shadow: 0 7px 25px rgba(0, 123, 255, 0.45);
         }
-
-        /* ===== (جديد) تصميم قسم التواصل (Footer) ===== */
         .contact-footer {
             background-color: #f8f9fa;
             padding: 25px;
@@ -164,6 +164,39 @@
         }
         .contact-link i { font-size: 1.5em; }
 
+        /* ===== (جديد) 4. تصميم الأقسام الجديدة للمحتوى ===== */
+        .content-section {
+            text-align: start;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+        .content-section h2 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .features-list li {
+            background-color: #f1f1f1;
+            padding: 15px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .features-list i {
+            font-size: 1.5em;
+            color: var(--secondary-color);
+        }
+        
         @media (max-width: 768px) {
             .app-details {
                 flex-direction: column;
@@ -184,16 +217,27 @@
                 <div id="date-display"></div>
                 <div id="time-display"></div>
             </div>
-            <h1 class="app-title" data-lang-ar="تطبيق دفتر اليوميات" data-lang-en="Journal App">تطبيق دفتر اليوميات</h1>
+            <h1 class="app-title" data-lang-ar="تطبيق دفتر اليوميات" data-lang-en="Expense Tracker">تطبيق دفتر اليوميات</h1>
             <section class="app-details">
                 <div class="app-icon-container">
-                    <img src="app-icon.png" alt="App Icon" class="app-icon">
+                    <img src="https://salah22ad.github.io/My-web/app-icon.png" alt="أيقونة تطبيق دفتر اليوميات لتتبع المصاريف الشخصية" class="app-icon">
                 </div>
                 <div class="app-description" data-lang-ar="رفيقك المثالي لتتبع نفقاتك اليومية وإدارة أموالك بكل سهولة ويسر. سجل مصاريفك، حلل عاداتك المالية، وحقق أهدافك الادخارية بفضل واجهته البسيطة وتقاريره الذكية." data-lang-en="Your perfect companion for tracking daily expenses and managing your finances with ease. Log your expenses, analyze your financial habits, and achieve your saving goals with its simple interface and smart reports.">
                     رفيقك المثالي لتتبع نفقاتك اليومية وإدارة أموالك بكل سهولة ويسر. سجل مصاريفك، حلل عاداتك المالية، وحقق أهدافك الادخارية بفضل واجهته البسيطة وتقاريره الذكية.
                 </div>
             </section>
-            <a href="https://dw.uptodown.net/dwn/1tV25U3nwlpt6DFt39i0FyiieiQT1eIvg_Bc2uY1tIzeqT84NnrPYr4sXm1y74_tXcksba0ZEoicgUzLVtXVbLHm5o2OGHqAgUxr7pOaPDykQiTdl9LLp2Cbhdirb2mW/jGeUBrhFNAd8YA5vPhExRh1Vka7F3bSZtH8rfHp800tE4wgY02lvdQK64I12u6r3hxrB9daweTLtg0NCp7NprTllXOaKzvk5kSgG2SOaObBlKUbk8aRNySjdg2rZM4xq/gwx_l9k6Y3fYDJeNjnjo5PwWmHA3-JJWdG4bByZCRlqwSLjXu5xm7g1NbAB5x2LROqNcPBMzsIdZ4MVM4foN5mDSQ2W8be-DZ5ojHS4aM5M=/smart-expense-tracker-1-0-4.apk" class="download-btn" target="_blank" rel="noopener noreferrer" data-lang-ar="تحميل التطبيق الآن" data-lang-en="Download Now">
+            
+            <section class="content-section">
+                <h2 data-lang-ar="لماذا تختار برنامج دفتر اليوميات؟" data-lang-en="Why Choose Expense Tracker?">لماذا تختار برنامج دفتر اليوميات؟</h2>
+                <ul class="features-list">
+                    <li data-lang-ar="<i class='fas fa-pen-to-square'></i><div><strong>تسجيل سهل وسريع:</strong> أضف نفقاتك اليومية بثوانٍ معدودة.</div>" data-lang-en="<i class='fas fa-pen-to-square'></i><div><strong>Quick & Easy Entry:</strong> Add your daily expenses in just a few seconds.</div>"><i class="fas fa-pen-to-square"></i><div><strong>تسجيل سهل وسريع:</strong> أضف نفقاتك اليومية بثوانٍ معدودة.</div></li>
+                    <li data-lang-ar="<i class='fas fa-chart-pie'></i><div><strong>تقارير ذكية:</strong> احصل على رسوم بيانية توضح أين يذهب مالك.</div>" data-lang-en="<i class='fas fa-chart-pie'></i><div><strong>Smart Reports:</strong> Get charts that show you where your money goes.</div>"><i class="fas fa-chart-pie"></i><div><strong>تقارير ذكية:</strong> احصل على رسوم بيانية توضح أين يذهب مالك.</div></li>
+                    <li data-lang-ar="<i class='fas fa-tags'></i><div><strong>تصنيف النفقات:</strong> قم بتصنيف مصاريفك (طعام، مواصلات...) لفهم أفضل.</div>" data-lang-en="<i class='fas fa-tags'></i><div><strong>Expense Categories:</strong> Categorize your expenses (food, transport...) for better understanding.</div>"><i class="fas fa-tags"></i><div><strong>تصنيف النفقات:</strong> قم بتصنيف مصاريفك (طعام، مواصلات...) لفهم أفضل.</div></li>
+                    <li data-lang-ar="<i class='fas fa-bullseye'></i><div><strong>حدد أهدافك:</strong> ضع أهدافاً مالية وراقب تقدمك في تحقيقها.</div>" data-lang-en="<i class='fas fa-bullseye'></i><div><strong>Set Your Goals:</strong> Create financial goals and track your progress towards them.</div>"><i class="fas fa-bullseye"></i><div><strong>حدد أهدافك:</strong> ضع أهدافاً مالية وراقب تقدمك في تحقيقها.</div></li>
+                </ul>
+            </section>
+            
+            <a href="https://dw.uptodown.net/dwn/1tV25U3nwlpt6DFt39i0FyiieiQT1eIvg_Bc2uY1tIzeqT84NnrPYr4sXm1y74_tXcksba0ZEoicgUzLVtXVbLHm5o2OGHqAgUxr7pOaPDykQiTdl9LLp2Cbhdirb2mW/jGeUBrhFNAd8YA5vPhExRh1Vka7F3bSZtH8rfHp800tE4wgY02lvdQK64I12u6r3hxrB9daweTLtg0NCp7NprTllXOaKzvk5kSgG2SOaObBlKUbk8aRNySjdg2rZM4xq/gwx_l9k6Y3fYDJeNjnjo5PwWmHA3-JJWdG4bByZCRlqwSLjXu5xm7g1NbAB5x2LROqNcPBMzsIdZ4MVM4foN5mDSQ2W8be-DZ5ojHS4aM5M=/smart-expense-tracker-1-0-4.apk" class="download-btn" target="_blank" rel="noopener noreferrer" data-lang-ar="تحميل التطبيق الآن" data-lang-en="Download Now" style="margin-top: 40px;">
                 تحميل التطبيق الآن
             </a>
         </main>
@@ -237,11 +281,15 @@
                 document.documentElement.lang = newLang;
                 document.documentElement.dir = newLang === 'ar' ? 'rtl' : 'ltr';
                 translatableElements.forEach(el => {
-                    const text = el.dataset[newLang === 'ar' ? 'langAr' : 'langEn'];
-                    el.textContent = text;
+                    const content = el.dataset[newLang === 'ar' ? 'langAr' : 'langEn'];
+                    if(el.tagName === 'A' || el.tagName === 'BUTTON' || el.tagName === 'H1' || el.tagName === 'H2' || el.tagName === 'H3' || el.tagName === 'P'){
+                        el.textContent = content;
+                    } else {
+                        el.innerHTML = content;
+                    }
                 });
                 langToggle.textContent = langToggle.dataset[newLang === 'ar' ? 'langAr' : 'langEn'];
-                document.title = newLang === 'ar' ? 'صفحة المطور' : 'Developer Page';
+                document.title = newLang === 'ar' ? 'تطبيق دفتر اليوميات | أفضل برنامج لتتبع المصاريف وإدارة الميزانية' : 'Expense Tracker | The Best Expense Tracker & Budget Manager';
                 updateTime();
             }
             langToggle.addEventListener('click', switchLanguage);
