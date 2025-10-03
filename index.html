@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>تطبيق دفتر اليوميات | أفضل برنامج لتتبع المصاريف وإدارة الميزانية</title>
+    <title>تطبيقاتنا | دفتر اليوميات وإنشاء عروض الأسعار</title>
 
-    <meta name="description" content="حمل تطبيق دفتر اليوميات مجاناً لإدارة نفقاتك اليومية وتتبع مصاريفك بسهولة. أفضل حل للتحكم في ميزانيتك الشخصية وتحقيق أهدافك المالية في اليمن والوطن العربي.">
+    <meta name="description" content="اكتشف تطبيقاتنا المميزة: تطبيق دفتر اليوميات لإدارة المصاريف وتتبع الميزانية، وتطبيق إنشاء عروض الأسعار لتصميم عروض احترافية. حملهما مجاناً الآن!">
 
     <link rel="icon" type="image/png" href="https://salah22ad.github.io/My-web/app-icon.png">
     <link rel="apple-touch-icon" href="https://salah22ad.github.io/My-web/app-icon.png">
-    <meta property="og:title" content="تطبيق دفتر اليوميات لتتبع المصاريف" />
-    <meta property="og:description" content="رفيقك المثالي لتتبع نفقاتك اليومية وإدارة أموالك بكل سهولة ويسر." />
+    <meta property="og:title" content="تطبيقاتنا | دفتر اليوميات وإنشاء عروض الأسعار" />
+    <meta property="og:description" content="اكتشف تطبيقاتنا المميزة لإدارة الشؤون المالية وإنشاء عروض الأسعار الاحترافية." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://salah22ad.github.io/My-web/app-icon.png" />
     <meta property="og:url" content="https://salah22ad.github.io/My-web/" />
@@ -25,6 +25,7 @@
         :root {
             --primary-color: #0056b3;
             --secondary-color: #007bff;
+            --quote-app-color: #28a745;
             --text-color: #333;
             --light-text-color: #666;
             --bg-color: #f8f9fa;
@@ -39,7 +40,7 @@
             transition: background-color 0.3s;
         }
         .container {
-            max-width: 900px;
+            max-width: 1100px;
             margin: 2rem auto;
             background-color: var(--card-bg-color);
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
@@ -89,33 +90,59 @@
             color: var(--primary-color);
         }
         #time-display { letter-spacing: 2px; }
-        .app-title {
+        .page-title {
             font-size: 2.2em;
             margin-bottom: 25px;
             color: var(--primary-color);
         }
-        .app-details {
+        
+        /* تصميم بطاقات التطبيقات */
+        .apps-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .app-card {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--card-bg-color);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        .app-card-header {
             display: flex;
             align-items: center;
-            gap: 30px;
-            text-align: start;
-            margin-bottom: 35px;
+            justify-content: center;
+            margin-bottom: 20px;
         }
-        .app-icon-container { flex-shrink: 0; }
-        .app-icon {
-            width: 120px;
-            height: 120px;
-            border-radius: 22px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        .app-card-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 18px;
+            margin-left: 15px;
         }
-        .app-description {
-            font-size: 1.1em;
-            line-height: 1.7;
+        .app-card-title {
+            font-size: 1.5em;
+            margin: 0;
+        }
+        .app-card-description {
             color: var(--light-text-color);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: start;
         }
+        
+        /* أزرار التحميل */
         .download-btn {
             display: inline-block;
-            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
             color: #ffffff;
             padding: 15px 40px;
             font-size: 1.25em;
@@ -124,16 +151,81 @@
             border-radius: 50px;
             transition: transform 0.2s, box-shadow 0.2s;
             box-shadow: 0 4px 20px rgba(0, 123, 255, 0.35);
+            margin-top: 15px;
         }
         .download-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 7px 25px rgba(0, 123, 255, 0.45);
         }
+        .expense-btn {
+            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+        }
+        .quote-btn {
+            background: linear-gradient(45deg, var(--quote-app-color), #1e7e34);
+            box-shadow: 0 4px 20px rgba(40, 167, 69, 0.35);
+        }
+        .quote-btn:hover {
+            box-shadow: 0 7px 25px rgba(40, 167, 69, 0.45);
+        }
+        
+        /* تصميم أقسام الميزات */
+        .features-section {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px dashed var(--border-color);
+        }
+        .section-title {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-size: 1.8em;
+        }
+        .quote-section-title {
+            color: var(--quote-app-color);
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .feature-card {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+            text-align: start;
+            transition: transform 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .quote-feature-card {
+            border-left-color: var(--quote-app-color);
+        }
+        .feature-icon {
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        .quote-feature-icon {
+            color: var(--quote-app-color);
+        }
+        .feature-title {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+        .feature-description {
+            color: var(--light-text-color);
+            line-height: 1.6;
+        }
+        
         .contact-footer {
             background-color: #f8f9fa;
             padding: 25px;
             border-top: 1px solid var(--border-color);
             text-align: center;
+            margin-top: 40px;
         }
         .footer-title {
             margin-top: 0;
@@ -163,48 +255,21 @@
             color: white;
         }
         .contact-link i { font-size: 1.5em; }
-
-        /* ===== (جديد) 4. تصميم الأقسام الجديدة للمحتوى ===== */
-        .content-section {
-            text-align: start;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-color);
-        }
-        .content-section h2 {
-            text-align: center;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-        .features-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-        }
-        .features-list li {
-            background-color: #f1f1f1;
-            padding: 15px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .features-list i {
-            font-size: 1.5em;
-            color: var(--secondary-color);
-        }
         
         @media (max-width: 768px) {
-            .app-details {
+            .page-title { font-size: 1.8em; }
+            .main-content { padding: 20px; }
+            .apps-container {
+                flex-direction: column;
+            }
+            .app-card-header {
                 flex-direction: column;
                 text-align: center;
-                gap: 20px;
             }
-            .app-title { font-size: 1.8em; }
-            .main-content { padding: 20px; }
+            .app-card-icon {
+                margin-left: 0;
+                margin-bottom: 15px;
+            }
         }
     </style>
 </head>
@@ -217,29 +282,200 @@
                 <div id="date-display"></div>
                 <div id="time-display"></div>
             </div>
-            <h1 class="app-title" data-lang-ar="تطبيق دفتر اليوميات" data-lang-en="Expense Tracker">تطبيق دفتر اليوميات</h1>
-            <section class="app-details">
-                <div class="app-icon-container">
-                    <img src="https://salah22ad.github.io/My-web/app-icon.png" alt="أيقونة تطبيق دفتر اليوميات لتتبع المصاريف الشخصية" class="app-icon">
+            
+            <h1 class="page-title" data-lang-ar="تطبيقاتنا المميزة" data-lang-en="Our Premium Apps">تطبيقاتنا المميزة</h1>
+            
+            <div class="apps-container">
+                <!-- تطبيق دفتر اليوميات -->
+                <div class="app-card">
+                    <div class="app-card-header">
+                        <img src="https://salah22ad.github.io/My-web/app-icon.png" alt="أيقونة تطبيق دفتر اليوميات" class="app-card-icon">
+                        <h2 class="app-card-title" data-lang-ar="دفتر اليوميات" data-lang-en="Expense Tracker">دفتر اليوميات</h2>
+                    </div>
+                    <p class="app-card-description" data-lang-ar="الحل الشامل لإدارة شؤونك المالية. تتبع مصاريفك، أنشئ فواتير احترافية، واتخذ قرارات مالية أفضل بفضل التقارير الذكية والمزامنة السحابية الآمنة." data-lang-en="The comprehensive solution for managing your financial affairs. Track your expenses, create professional invoices, and make better financial decisions thanks to smart reports and secure cloud sync.">
+                        الحل الشامل لإدارة شؤونك المالية. تتبع مصاريفك، أنشئ فواتير احترافية، واتخذ قرارات مالية أفضل بفضل التقارير الذكية والمزامنة السحابية الآمنة.
+                    </p>
+                    <a href="https://dw.uptodown.net/dwn/1tV25U3nwlpt6DFt39i0FyiieiQT1eIvg_Bc2uY1tIzeqT84NnrPYr4sXm1y74_tXcksba0ZEoicgUzLVtXVbLHm5o2OGHqAgUxr7pOaPDykQiTdl9LLp2Cbhdirb2mW/jGeUBrhFNAd8YA5vPhExRh1Vka7F3bSZtH8rfHp800tE4wgY02lvdQK64I12u6r3hxrB9daweTLtg0NCp7NprTllXOaKzvk5kSgG2SOaObBlKUbk8aRNySjdg2rZM4xq/gwx_l9k6Y3fYDJeNjnjo5PwWmHA3-JJWdG4bByZCRlqwSLjXu5xm7g1NbAB5x2LROqNcPBMzsIdZ4MVM4foN5mDSQ2W8be-DZ5ojHS4aM5M=/smart-expense-tracker-1-0-4.apk" class="download-btn expense-btn" target="_blank" rel="noopener noreferrer" data-lang-ar="تحميل التطبيق الآن" data-lang-en="Download Now">
+                        تحميل التطبيق الآن
+                    </a>
                 </div>
-                <div class="app-description" data-lang-ar="رفيقك المثالي لتتبع نفقاتك اليومية وإدارة أموالك بكل سهولة ويسر. سجل مصاريفك، حلل عاداتك المالية، وحقق أهدافك الادخارية بفضل واجهته البسيطة وتقاريره الذكية." data-lang-en="Your perfect companion for tracking daily expenses and managing your finances with ease. Log your expenses, analyze your financial habits, and achieve your saving goals with its simple interface and smart reports.">
-                    رفيقك المثالي لتتبع نفقاتك اليومية وإدارة أموالك بكل سهولة ويسر. سجل مصاريفك، حلل عاداتك المالية، وحقق أهدافك الادخارية بفضل واجهته البسيطة وتقاريره الذكية.
+                
+                <!-- تطبيق إنشاء عروض أسعار -->
+                <div class="app-card">
+                    <div class="app-card-header">
+                        <img src="https://salah22ad.github.io/My-web/qoute-icon.png" alt="أيقونة تطبيق إنشاء عروض أسعار" class="app-card-icon">
+                        <h2 class="app-card-title" data-lang-ar="إنشاء عروض أسعار" data-lang-en="Quote Creator">إنشاء عروض أسعار</h2>
+                    </div>
+                    <p class="app-card-description" data-lang-ar="أداة متكاملة لإنشاء عروض أسعار احترافية بتصميم أنيق. احفظ بيانات عملائك وأصنافك، وأنشئ عروض أسعار جذابة يمكن تصديرها كملفات PDF للطباعة أو الإرسال." data-lang-en="A comprehensive tool for creating professional quotes with elegant designs. Save your clients and items data, create attractive quotes that can be exported as PDF files for printing or sending.">
+                        أداة متكاملة لإنشاء عروض أسعار احترافية بتصميم أنيق. احفظ بيانات عملائك وأصنافك، وأنشئ عروض أسعار جذابة يمكن تصديرها كملفات PDF للطباعة أو الإرسال.
+                    </p>
+                    <a href="https://www.4shared.com/mobile/Kqzh8P_6ge/___.html" class="download-btn quote-btn" target="_blank" rel="noopener noreferrer" data-lang-ar="تحميل التطبيق الآن" data-lang-en="Download Now">
+                        تحميل التطبيق الآن
+                    </a>
+                </div>
+            </div>
+            
+            <!-- قسم ميزات تطبيق دفتر اليوميات -->
+            <section class="features-section">
+                <h2 class="section-title" data-lang-ar="مميزات تطبيق دفتر اليوميات" data-lang-en="Features of Expense Tracker">مميزات تطبيق دفتر اليوميات</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h3 class="feature-title" data-lang-ar="مزامنة فورية بين الأجهزة" data-lang-en="Instant Sync Across Devices">مزامنة فورية بين الأجهزة</h3>
+                        <p class="feature-description" data-lang-ar="استخدم التطبيق على جهازين مختلفين لنفس الحساب. أي عملية مالية تتم على أحد الأجهزة تظهر تلقائياً على الجهاز الآخر في نفس اللحظة." data-lang-en="Use the app on two different devices with the same account. Any financial transaction made on one device automatically appears on the other device at the same moment.">
+                            استخدم التطبيق على جهازين مختلفين لنفس الحساب. أي عملية مالية تتم على أحد الأجهزة تظهر تلقائياً على الجهاز الآخر في نفس اللحظة.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 class="feature-title" data-lang-ar="سهولة فائقة في الاستخدام" data-lang-en="Super Easy to Use">سهولة فائقة في الاستخدام</h3>
+                        <p class="feature-description" data-lang-ar="واجهة بسيطة وذكية تمكنك من تسجيل أي عملية مالية في ثوانٍ معدودة دون تعقيد." data-lang-en="Simple and smart interface that allows you to record any financial transaction in seconds without complexity.">
+                            واجهة بسيطة وذكية تمكنك من تسجيل أي عملية مالية في ثوانٍ معدودة دون تعقيد.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="feature-title" data-lang-ar="إدارة شاملة للحسابات" data-lang-en="Comprehensive Account Management">إدارة شاملة للحسابات</h3>
+                        <p class="feature-description" data-lang-ar="أنشئ ملفًا لكل عميل، مورد، أو حساب شخصي وتتبع كل معاملاته بدقة متناهية." data-lang-en="Create a file for each client, supplier, or personal account and track all their transactions with precision.">
+                            أنشئ ملفًا لكل عميل، مورد، أو حساب شخصي وتتبع كل معاملاته بدقة متناهية.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h3 class="feature-title" data-lang-ar="دعم تعدد العملات" data-lang-en="Multi-Currency Support">دعم تعدد العملات</h3>
+                        <p class="feature-description" data-lang-ar="أدر حساباتك بعملتك المحلية، وأي عملة أخرى تضيفها بنفسك مع أسعار صرف محدثة." data-lang-en="Manage your accounts in your local currency, and any other currency you add yourself with updated exchange rates.">
+                            أدر حساباتك بعملتك المحلية، وأي عملة أخرى تضيفها بنفسك مع أسعار صرف محدثة.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <h3 class="feature-title" data-lang-ar="تقارير PDF احترافية" data-lang-en="Professional PDF Reports">تقارير PDF احترافية</h3>
+                        <p class="feature-description" data-lang-ar="أنشئ كشوفات حساب وتقارير مالية مجمعة أو مفصلة، وشاركها مباشرة مع عملائك عبر الواتساب أو أي تطبيق آخر." data-lang-en="Create account statements and financial reports, either summarized or detailed, and share them directly with your clients via WhatsApp or any other app.">
+                            أنشئ كشوفات حساب وتقارير مالية مجمعة أو مفصلة، وشاركها مباشرة مع عملائك عبر الواتساب أو أي تطبيق آخر.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <h3 class="feature-title" data-lang-ar="الربط بالكمبيوتر" data-lang-en="Computer Connection">الربط بالكمبيوتر</h3>
+                        <p class="feature-description" data-lang-ar="اربط التطبيق باللاب توب وتصفح التقارير بكل راحة مع التأكد من أن الهاتف واللاب توب مرتبطان بنفس شبكة WiFi." data-lang-en="Connect the app to your laptop and browse reports comfortably, ensuring that the phone and laptop are connected to the same WiFi network.">
+                            اربط التطبيق باللاب توب وتصفح التقارير بكل راحة مع التأكد من أن الهاتف واللاب توب مرتبطان بنفس شبكة WiFi.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3 class="feature-title" data-lang-ar="مزامنة سحابية آمنة" data-lang-en="Secure Cloud Sync">مزامنة سحابية آمنة</h3>
+                        <p class="feature-description" data-lang-ar="لا تحتاج لنسخ احتياطية! بياناتك في أمان تام مع المزامنة التلقائية لحسابك الخاص في جوجل درايف." data-lang-en="No need for backups! Your data is completely safe with automatic synchronization to your personal Google Drive account.">
+                            لا تحتاج لنسخ احتياطية! بياناتك في أمان تام مع المزامنة التلقائية لحسابك الخاص في جوجل درايف.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h3 class="feature-title" data-lang-ar="أمان وحماية متكاملة" data-lang-en="Complete Security & Protection">أمان وحماية متكاملة</h3>
+                        <p class="feature-description" data-lang-ar="حافظ على سرية بياناتك المالية عبر قفل التطبيق بكلمة مرور أو ببصمة إصبعك." data-lang-en="Maintain the confidentiality of your financial data by locking the app with a password or your fingerprint.">
+                            حافظ على سرية بياناتك المالية عبر قفل التطبيق بكلمة مرور أو ببصمة إصبعك.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                        <h3 class="feature-title" data-lang-ar="يعمل بدون إنترنت" data-lang-en="Works Offline">يعمل بدون إنترنت</h3>
+                        <p class="feature-description" data-lang-ar="لا تقلق بشأن الاتصال. يمكنك تسجيل وتصفح كل عملياتك في أي وقت، وسيتم المزامنة تلقائيًا عند توفر الشبكة." data-lang-en="Don't worry about connection. You can record and browse all your transactions at any time, and synchronization will happen automatically when the network is available.">
+                            لا تقلق بشأن الاتصال. يمكنك تسجيل وتصفح كل عملياتك في أي وقت، وسيتم المزامنة تلقائيًا عند توفر الشبكة.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-file-import"></i>
+                        </div>
+                        <h3 class="feature-title" data-lang-ar="استيراد البيانات" data-lang-en="Data Import">استيراد البيانات</h3>
+                        <p class="feature-description" data-lang-ar="استورد بياناتك من تطبيقات قديمة أو نسخ احتياطية ومتابعة عملك بدون انقطاع." data-lang-en="Import your data from old apps or backups and continue your work without interruption.">
+                            استورد بياناتك من تطبيقات قديمة أو نسخ احتياطية ومتابعة عملك بدون انقطاع.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-receipt"></i>
+                        </div>
+                        <h3 class="feature-title" data-lang-ar="نظام فواتير متكامل" data-lang-en="Integrated Invoice System">نظام فواتير متكامل</h3>
+                        <p class="feature-description" data-lang-ar="أنشئ فواتير مبيعات ومشتريات احترافية، وتتبع المبالغ المدفوعة والمتبقية بسهولة." data-lang-en="Create professional sales and purchase invoices, and easily track paid and remaining amounts.">
+                            أنشئ فواتير مبيعات ومشتريات احترافية، وتتبع المبالغ المدفوعة والمتبقية بسهولة.
+                        </p>
+                    </div>
                 </div>
             </section>
             
-            <section class="content-section">
-                <h2 data-lang-ar="لماذا تختار برنامج دفتر اليوميات؟" data-lang-en="Why Choose Expense Tracker?">لماذا تختار برنامج دفتر اليوميات؟</h2>
-                <ul class="features-list">
-                    <li data-lang-ar="<i class='fas fa-pen-to-square'></i><div><strong>تسجيل سهل وسريع:</strong> أضف نفقاتك اليومية بثوانٍ معدودة.</div>" data-lang-en="<i class='fas fa-pen-to-square'></i><div><strong>Quick & Easy Entry:</strong> Add your daily expenses in just a few seconds.</div>"><i class="fas fa-pen-to-square"></i><div><strong>تسجيل سهل وسريع:</strong> أضف نفقاتك اليومية بثوانٍ معدودة.</div></li>
-                    <li data-lang-ar="<i class='fas fa-chart-pie'></i><div><strong>تقارير ذكية:</strong> احصل على رسوم بيانية توضح أين يذهب مالك.</div>" data-lang-en="<i class='fas fa-chart-pie'></i><div><strong>Smart Reports:</strong> Get charts that show you where your money goes.</div>"><i class="fas fa-chart-pie"></i><div><strong>تقارير ذكية:</strong> احصل على رسوم بيانية توضح أين يذهب مالك.</div></li>
-                    <li data-lang-ar="<i class='fas fa-tags'></i><div><strong>تصنيف النفقات:</strong> قم بتصنيف مصاريفك (طعام، مواصلات...) لفهم أفضل.</div>" data-lang-en="<i class='fas fa-tags'></i><div><strong>Expense Categories:</strong> Categorize your expenses (food, transport...) for better understanding.</div>"><i class="fas fa-tags"></i><div><strong>تصنيف النفقات:</strong> قم بتصنيف مصاريفك (طعام، مواصلات...) لفهم أفضل.</div></li>
-                    <li data-lang-ar="<i class='fas fa-bullseye'></i><div><strong>حدد أهدافك:</strong> ضع أهدافاً مالية وراقب تقدمك في تحقيقها.</div>" data-lang-en="<i class='fas fa-bullseye'></i><div><strong>Set Your Goals:</strong> Create financial goals and track your progress towards them.</div>"><i class="fas fa-bullseye"></i><div><strong>حدد أهدافك:</strong> ضع أهدافاً مالية وراقب تقدمك في تحقيقها.</div></li>
-                </ul>
+            <!-- قسم ميزات تطبيق إنشاء عروض أسعار -->
+            <section class="features-section">
+                <h2 class="section-title quote-section-title" data-lang-ar="مميزات تطبيق إنشاء عروض الأسعار" data-lang-en="Features of Quote Creator App">مميزات تطبيق إنشاء عروض الأسعار</h2>
+                <div class="features-grid">
+                    <div class="feature-card quote-feature-card">
+                        <div class="feature-icon quote-feature-icon">
+                            <i class="fas fa-file-invoice"></i>
+                        </div>
+                        <h3 class="feature-title" data-lang-ar="تصميم احترافي" data-lang-en="Professional Design">تصميم احترافي</h3>
+                        <p class="feature-description" data-lang-ar="إنشاء عروض أسعار بتصميم أنيق وجذاب يعكس صورة احترافية لعملك." data-lang-en="Create quotes with elegant and attractive designs that reflect a professional image for your business.">
+                            إنشاء عروض أسعار بتصميم أنيق وجذاب يعكس صورة احترافية لعملك.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card quote-feature-card">
+                        <div class="feature-icon quote-feature-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3 class="feature-title" data-lang-ar="قاعدة بيانات متكاملة" data-lang-en="Integrated Database">قاعدة بيانات متكاملة</h3>
+                        <p class="feature-description" data-lang-ar="احفظ بيانات العملاء والأصناف لسهولة الاستخدام مستقبلاً وتوفير الوقت." data-lang-en="Save client and item data for easy future use and time saving.">
+                            احفظ بيانات العملاء والأصناف لسهولة الاستخدام مستقبلاً وتوفير الوقت.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card quote-feature-card">
+                        <div class="feature-icon quote-feature-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <h3 class="feature-title" data-lang-ar="تصدير PDF" data-lang-en="PDF Export">تصدير PDF</h3>
+                        <p class="feature-description" data-lang-ar="قدرة على تصدير عروض الأسعار كملفات PDF جاهزة للطباعة أو الإرسال للعملاء." data-lang-en="Ability to export quotes as PDF files ready for printing or sending to clients.">
+                            قدرة على تصدير عروض الأسعار كملفات PDF جاهزة للطباعة أو الإرسال للعملاء.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card quote-feature-card">
+                        <div class="feature-icon quote-feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 class="feature-title" data-lang-ar="سهولة الاستخدام" data-lang-en="Easy to Use">سهولة الاستخدام</h3>
+                        <p class="feature-description" data-lang-ar="واجهة مستخدم بسيطة وسهلة للتعامل مع التطبيق وإنشاء عروض أسعار بسرعة." data-lang-en="Simple and easy user interface for app interaction and quick quote creation.">
+                            واجهة مستخدم بسيطة وسهلة للتعامل مع التطبيق وإنشاء عروض أسعار بسرعة.
+                        </p>
+                    </div>
+                </div>
             </section>
-            
-            <a href="https://dw.uptodown.net/dwn/1tV25U3nwlpt6DFt39i0FyiieiQT1eIvg_Bc2uY1tIzeqT84NnrPYr4sXm1y74_tXcksba0ZEoicgUzLVtXVbLHm5o2OGHqAgUxr7pOaPDykQiTdl9LLp2Cbhdirb2mW/jGeUBrhFNAd8YA5vPhExRh1Vka7F3bSZtH8rfHp800tE4wgY02lvdQK64I12u6r3hxrB9daweTLtg0NCp7NprTllXOaKzvk5kSgG2SOaObBlKUbk8aRNySjdg2rZM4xq/gwx_l9k6Y3fYDJeNjnjo5PwWmHA3-JJWdG4bByZCRlqwSLjXu5xm7g1NbAB5x2LROqNcPBMzsIdZ4MVM4foN5mDSQ2W8be-DZ5ojHS4aM5M=/smart-expense-tracker-1-0-4.apk" class="download-btn" target="_blank" rel="noopener noreferrer" data-lang-ar="تحميل التطبيق الآن" data-lang-en="Download Now" style="margin-top: 40px;">
-                تحميل التطبيق الآن
-            </a>
         </main>
 
         <footer class="contact-footer">
@@ -289,7 +525,7 @@
                     }
                 });
                 langToggle.textContent = langToggle.dataset[newLang === 'ar' ? 'langAr' : 'langEn'];
-                document.title = newLang === 'ar' ? 'تطبيق دفتر اليوميات | أفضل برنامج لتتبع المصاريف وإدارة الميزانية' : 'Expense Tracker | The Best Expense Tracker & Budget Manager';
+                document.title = newLang === 'ar' ? 'تطبيقاتنا | دفتر اليوميات وإنشاء عروض الأسعار' : 'Our Apps | Expense Tracker & Quote Creator';
                 updateTime();
             }
             langToggle.addEventListener('click', switchLanguage);
