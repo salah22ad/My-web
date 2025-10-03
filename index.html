@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة المطور</title>
+
     <link rel="icon" type="image/png" href="app-icon.png">
-<link rel="apple-touch-icon" href="app-icon.png">
-<title>صفحة المطور</title>
-<meta property="og:title" content="تطبيق دفتر اليوميات" />
-<meta property="og:description" content="رفيقك المثالي لتتبع نفقاتك اليومية وإدارة أموالك بكل سهولة ويسر." />
-<meta property="og:type" content="website" />
-
-<meta property="og:image" content="http://haddadinc.somee.com/app-icon.png" />
-<meta property="og:url" content="http://haddadinc.somee.com/" />
-
+    <link rel="apple-touch-icon" href="app-icon.png">
+    <meta property="og:title" content="تطبيق دفتر اليوميات" />
+    <meta property="og:description" content="رفيقك المثالي لتتبع نفقاتك اليومية وإدارة أموالك بكل سهولة ويسر." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://haddadinc.somee.com/app-icon.png" />
+    <meta property="og:url" content="http://haddadinc.somee.com/" />
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
     <style>
-        /* متغيرات الألوان لتسهيل التعديل */
         :root {
             --primary-color: #0056b3;
             --secondary-color: #007bff;
@@ -28,7 +29,6 @@
             --card-bg-color: #ffffff;
             --border-color: #dee2e6;
         }
-
         body {
             font-family: 'Tajawal', sans-serif;
             background-color: var(--bg-color);
@@ -36,41 +36,27 @@
             color: var(--text-color);
             transition: background-color 0.3s;
         }
-
         .container {
             max-width: 900px;
-            margin: 0 auto;
-            padding: 0;
+            margin: 2rem auto;
             background-color: var(--card-bg-color);
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
-            margin-top: 2rem;
-            margin-bottom: 2rem;
             overflow: hidden;
         }
-
-        /* 1. الهيدر (20% من ارتفاع الشاشة) */
         .header {
             height: 20vh;
-            background-image: url('banner.jpg'); /* تأكد من أن اسم الصورة صحيح */
+            background-image: url('banner.jpg');
             background-size: cover;
             background-position: center;
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
-        .header::after { /* طبقة داكنة فوق الصورة لتحسين وضوح أي نص مستقبلي */
+        .header::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             background-color: rgba(0, 0, 0, 0.3);
         }
-        
-        /* زر تغيير اللغة */
         .lang-switcher {
             position: absolute;
             top: 20px;
@@ -85,21 +71,9 @@
             font-weight: bold;
             transition: background-color 0.2s;
         }
-        .lang-switcher:hover {
-            background-color: rgba(255, 255, 255, 1);
-        }
-        /* لتعديل مكان الزر عند التحويل للغة الانجليزية */
-        html[dir="ltr"] .lang-switcher {
-            right: auto;
-            left: 20px;
-        }
-
-        .main-content {
-            padding: 30px;
-            text-align: center;
-        }
-        
-        /* 2. قسم الوقت والتاريخ */
+        .lang-switcher:hover { background-color: rgba(255, 255, 255, 1); }
+        html[dir="ltr"] .lang-switcher { right: auto; left: 20px; }
+        .main-content { padding: 30px; text-align: center; }
         .datetime-container {
             background-color: #f1f1f1;
             padding: 10px;
@@ -112,42 +86,31 @@
             font-weight: bold;
             color: var(--primary-color);
         }
-        #time-display {
-            letter-spacing: 2px;
-        }
-        
-        /* 3. محتوى التطبيق */
+        #time-display { letter-spacing: 2px; }
         .app-title {
             font-size: 2.2em;
             margin-bottom: 25px;
             color: var(--primary-color);
         }
-
         .app-details {
             display: flex;
             align-items: center;
             gap: 30px;
-            text-align: start; /* محاذاة النص لليمين/اليسار */
+            text-align: start;
             margin-bottom: 35px;
         }
-
-        .app-icon-container {
-            flex-shrink: 0; /* لمنع الأيقونة من التقلص */
-        }
+        .app-icon-container { flex-shrink: 0; }
         .app-icon {
             width: 120px;
             height: 120px;
             border-radius: 22px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
-        
         .app-description {
             font-size: 1.1em;
             line-height: 1.7;
             color: var(--light-text-color);
         }
-        
-        /* 4. زر التحميل */
         .download-btn {
             display: inline-block;
             background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
@@ -164,38 +127,64 @@
             transform: translateY(-3px);
             box-shadow: 0 7px 25px rgba(0, 123, 255, 0.45);
         }
-        
-        /* تصميم متجاوب للشاشات الصغيرة */
+
+        /* ===== (جديد) تصميم قسم التواصل (Footer) ===== */
+        .contact-footer {
+            background-color: #f8f9fa;
+            padding: 25px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+        .footer-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 1.1em;
+            padding: 8px 15px;
+            border-radius: 25px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .contact-link:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        .contact-link i { font-size: 1.5em; }
+
         @media (max-width: 768px) {
             .app-details {
                 flex-direction: column;
                 text-align: center;
                 gap: 20px;
             }
-            .app-title {
-                font-size: 1.8em;
-            }
-            .main-content {
-                padding: 20px;
-            }
+            .app-title { font-size: 1.8em; }
+            .main-content { padding: 20px; }
         }
     </style>
 </head>
 <body>
-
     <div class="container">
         <button class="lang-switcher" id="lang-toggle" data-lang-ar="English" data-lang-en="العربية">English</button>
-        
         <header class="header"></header>
-
         <main class="main-content">
             <div class="datetime-container">
                 <div id="date-display"></div>
                 <div id="time-display"></div>
             </div>
-
             <h1 class="app-title" data-lang-ar="تطبيق دفتر اليوميات" data-lang-en="Journal App">تطبيق دفتر اليوميات</h1>
-
             <section class="app-details">
                 <div class="app-icon-container">
                     <img src="app-icon.png" alt="App Icon" class="app-icon">
@@ -204,74 +193,57 @@
                     رفيقك المثالي لتتبع نفقاتك اليومية وإدارة أموالك بكل سهولة ويسر. سجل مصاريفك، حلل عاداتك المالية، وحقق أهدافك الادخارية بفضل واجهته البسيطة وتقاريره الذكية.
                 </div>
             </section>
-
             <a href="https://dw.uptodown.net/dwn/1tV25U3nwlpt6DFt39i0FyiieiQT1eIvg_Bc2uY1tIzeqT84NnrPYr4sXm1y74_tXcksba0ZEoicgUzLVtXVbLHm5o2OGHqAgUxr7pOaPDykQiTdl9LLp2Cbhdirb2mW/jGeUBrhFNAd8YA5vPhExRh1Vka7F3bSZtH8rfHp800tE4wgY02lvdQK64I12u6r3hxrB9daweTLtg0NCp7NprTllXOaKzvk5kSgG2SOaObBlKUbk8aRNySjdg2rZM4xq/gwx_l9k6Y3fYDJeNjnjo5PwWmHA3-JJWdG4bByZCRlqwSLjXu5xm7g1NbAB5x2LROqNcPBMzsIdZ4MVM4foN5mDSQ2W8be-DZ5ojHS4aM5M=/smart-expense-tracker-1-0-4.apk" class="download-btn" target="_blank" rel="noopener noreferrer" data-lang-ar="تحميل التطبيق الآن" data-lang-en="Download Now">
                 تحميل التطبيق الآن
             </a>
         </main>
+
+        <footer class="contact-footer">
+            <h3 class="footer-title" data-lang-ar="تواصل مع المطور" data-lang-en="Contact The Developer">تواصل مع المطور</h3>
+            <div class="contact-links">
+                <a href="https://wa.me/967734249712" class="contact-link" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>+967 734 249 712</span>
+                </a>
+                <a href="mailto:salah22app@gmail.com" class="contact-link">
+                    <i class="fas fa-envelope"></i>
+                    <span>salah22app@gmail.com</span>
+                </a>
+            </div>
+        </footer>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // --- الجزء الخاص بالوقت والتاريخ المباشر ---
             const dateDisplay = document.getElementById('date-display');
             const timeDisplay = document.getElementById('time-display');
-
             function updateTime() {
                 const now = new Date();
                 const currentLang = document.documentElement.lang;
-                
-                // تحديد صيغة اللغة (locale)
-                const dateLocale = currentLang === 'ar' ? 'ar-SA' : 'en-US';
-                
-                // إعداد صيغة عرض التاريخ
+                const dateLocale = currentLang === 'ar' ? 'ar-EG' : 'en-US';
                 const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
                 dateDisplay.textContent = now.toLocaleDateString(dateLocale, dateOptions);
-                
-                // إعداد صيغة عرض الوقت
                 const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
                 timeDisplay.textContent = now.toLocaleTimeString(dateLocale, timeOptions);
             }
-
-            // تحديث الوقت كل ثانية
             setInterval(updateTime, 1000);
-            // العرض الفوري عند تحميل الصفحة
             updateTime();
 
-
-            // --- الجزء الخاص بتغيير اللغة ---
             const langToggle = document.getElementById('lang-toggle');
             const translatableElements = document.querySelectorAll('[data-lang-ar]');
-            
             function switchLanguage() {
                 const currentLang = document.documentElement.lang;
                 const newLang = currentLang === 'ar' ? 'en' : 'ar';
-
                 document.documentElement.lang = newLang;
                 document.documentElement.dir = newLang === 'ar' ? 'rtl' : 'ltr';
-                
-                // تغيير النصوص في الصفحة
                 translatableElements.forEach(el => {
                     const text = el.dataset[newLang === 'ar' ? 'langAr' : 'langEn'];
-                    // التحقق إذا كان العنصر هو زر التحميل أو عنصر آخر
-                    if (el.tagName === 'A' || el.tagName === 'BUTTON' || el.tagName === 'INPUT') {
-                        el.textContent = text;
-                    } else {
-                         // لضمان تغيير المحتوى النصي فقط
-                        el.innerHTML = text;
-                    }
+                    el.textContent = text;
                 });
-
-                // تغيير نص زر اللغة نفسه
                 langToggle.textContent = langToggle.dataset[newLang === 'ar' ? 'langAr' : 'langEn'];
-                
-                // تحديث عنوان الصفحة
                 document.title = newLang === 'ar' ? 'صفحة المطور' : 'Developer Page';
-
-                // تحديث عرض الوقت والتاريخ فوراً باللغة الجديدة
                 updateTime();
             }
-
             langToggle.addEventListener('click', switchLanguage);
         });
     </script>
